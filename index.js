@@ -1,5 +1,5 @@
 // Add your code here
-function submitData(name , email){
+async function submitData(name , email){
 
     let myRequest={
         method:"POST",
@@ -12,15 +12,11 @@ function submitData(name , email){
             email:"learnwithm@gamil.com",
         })
     }
-   return fetch('http://localhost:3000/users', myRequest)
-    .then(res=> res.json())
-    .then((data)=>{
+   try {
+        const res = await fetch('http://localhost:3000/users', myRequest);
+        const data = await res.json();
         console.log(data);
-    })
-    .catch((error)=>{
-        console.error("there's an error",error);
+    } catch (error) {
+        console.error("there's an error", error)
     }
-    
-    )
-
 }
