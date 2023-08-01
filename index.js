@@ -21,4 +21,3 @@ function submitData(name, email) {
       document.body.appendChild(errorMessage);
     });
   }
-submitData();  
